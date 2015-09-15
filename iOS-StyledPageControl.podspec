@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "iOS-StyledPageControl"
-  s.version      = "1.1"
+  s.version      = "1.3"
   s.summary      = "Customizable PageControl for iOS"
 
   #s.description  = <<-DESC Customizable PageControl for iOS DESC
@@ -71,7 +71,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/zubco/iOS-StyledPageControl.git", :tag => "1.1" }
+  s.source       = { :git => "https://github.com/zubco/iOS-StyledPageControl.git", :tag => s.version }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -84,8 +84,7 @@ Pod::Spec.new do |s|
 
   s.source_files  = "Classes", "StyledPageControlDemo/PageControlDemo/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
-
-  # s.public_header_files = "Classes/**/*.h"
+  s.public_header_files = "StyledPageControlDemo/PageControlDemo/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
