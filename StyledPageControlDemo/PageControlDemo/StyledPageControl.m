@@ -178,42 +178,42 @@
             diameter = self.thumbImage.size.width;
         }
     }
-	
-	NSInteger total_width = self.numberOfPages*diameter + (self.numberOfPages-1)*gap;
-	
-	if (total_width>self.frame.size.width)
-	{
-		while (total_width>self.frame.size.width)
-		{
-			diameter -= 2;
-			gap = diameter + 2;
-			while (total_width>self.frame.size.width) 
-			{
-				gap -= 1;
-				total_width = self.numberOfPages*diameter + (self.numberOfPages-1)*gap;
-				
-				if (gap==2)
-				{
-					break;
-					total_width = self.numberOfPages*diameter + (self.numberOfPages-1)*gap;
-				}
-			}
-			
-			if (diameter==2)
-			{
-				break;
-				total_width = self.numberOfPages*diameter + (self.numberOfPages-1)*gap;
-			}
-		}
-		
-		
-	}
-	
-	int i;
-	for (i=0; i<self.numberOfPages; i++)
-	{
-		int x = (self.frame.size.width-total_width)/2 + i*(diameter+gap);
-
+    
+    NSInteger total_width = self.numberOfPages*diameter + (self.numberOfPages-1)*gap;
+    
+    if (total_width>self.frame.size.width)
+    {
+        while (total_width>self.frame.size.width)
+        {
+            diameter -= 2;
+            gap = diameter + 2;
+            while (total_width>self.frame.size.width)
+            {
+                gap -= 1;
+                total_width = self.numberOfPages*diameter + (self.numberOfPages-1)*gap;
+                
+                if (gap==2)
+                {
+                    total_width = self.numberOfPages*diameter + (self.numberOfPages-1)*gap;
+                    break;
+                }
+            }
+            
+            if (diameter==2)
+            {
+                total_width = self.numberOfPages*diameter + (self.numberOfPages-1)*gap;
+                break;
+            }
+        }
+        
+        
+    }
+    
+    int i;
+    for (i=0; i<self.numberOfPages; i++)
+    {
+        int x = (self.frame.size.width-total_width)/2 + i*(diameter+gap);
+        
         if (self.pageControlStyle==PageControlStyleDefault)
         {
             if (i==self.currentPage)
@@ -274,10 +274,10 @@
                 CGContextFillEllipseInRect(myContext, CGRectMake(x,(self.frame.size.height-_currentPageDiameter)/2,_currentPageDiameter,_currentPageDiameter));
                 CGContextSetStrokeColorWithColor(myContext, [strokeSelectedColor CGColor]);
                 CGContextStrokeEllipseInRect(myContext, CGRectMake(x,(self.frame.size.height-_currentPageDiameter)/2,_currentPageDiameter,_currentPageDiameter));
-            
+                
                 NSString *pageNumber = [NSString stringWithFormat:@"%i", i+1];
                 CGContextSetFillColorWithColor(myContext, [[UIColor whiteColor] CGColor]);
-                [pageNumber drawInRect:CGRectMake(x,(self.frame.size.height-_currentPageDiameter)/2-1,_currentPageDiameter,_currentPageDiameter) withFont:[UIFont systemFontOfSize:_currentPageDiameter-2] lineBreakMode:UILineBreakModeCharacterWrap alignment:UITextAlignmentCenter];
+                [pageNumber drawInRect:CGRectMake(x,(self.frame.size.height-_currentPageDiameter)/2-1,_currentPageDiameter,_currentPageDiameter) withFont:[UIFont systemFontOfSize:_currentPageDiameter-2] lineBreakMode:NSLineBreakByCharWrapping alignment:NSTextAlignmentCenter];
             }
             else
             {
