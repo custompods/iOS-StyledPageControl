@@ -16,14 +16,12 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "iOS-StyledPageControl"
-  s.version      = "1.0"
+  s.version      = "1.1"
   s.summary      = "Customizable PageControl for iOS"
 
-  s.description  = <<-DESC
-                   Custom page control
-                   DESC
+  #s.description  = <<-DESC Customizable PageControl for iOS DESC
 
-  s.homepage     = "http://honcheng.com"
+  s.homepage     = "https://github.com/zubco/iOS-StyledPageControl/blob/master/README.md"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -34,7 +32,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT (example)"
+  s.license      = "MIT"
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -59,7 +57,7 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
+  s.platform     = :ios
   # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
@@ -73,7 +71,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/zubco/iOS-StyledPageControl.git", :tag => "1.0" }
+  s.source       = { :git => "https://github.com/zubco/iOS-StyledPageControl.git", :tag => "1.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -84,7 +82,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
+  s.source_files  = "Classes", "StyledPageControlDemo/PageControlDemo/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -112,6 +110,7 @@ Pod::Spec.new do |s|
 
   # s.framework  = "SomeFramework"
   # s.frameworks = "SomeFramework", "AnotherFramework"
+s.frameworks   = 'CoreGraphics', 'UIKit', 'Foundation', 'QuartzCore'
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
