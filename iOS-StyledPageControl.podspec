@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "iOS-StyledPageControl"
-  s.version      = "1.3"
+  s.version      = "1.4"
   s.summary      = "Customizable PageControl for iOS"
 
   #s.description  = <<-DESC Customizable PageControl for iOS DESC
@@ -32,9 +32,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = "MIT"
-  # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
-
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -57,7 +55,7 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  s.platform     = :ios
+  s.platform     = :ios, "6.0"
   # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
@@ -71,7 +69,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/zubco/iOS-StyledPageControl.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/zubco/iOS-StyledPageControl.git", :tag => "1.4" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -82,9 +80,10 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "StyledPageControlDemo/PageControlDemo/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
-  s.public_header_files = "StyledPageControlDemo/PageControlDemo/**/*.h"
+  s.source_files  = "StyledPageControlDemo/PageControlDemo/StyledPageControl.{h,m}"
+  # s.source_files  = "StyledPageControlDemo/PageControlDemo/**/*.{h,m}"
+  #s.exclude_files = "Classes/Exclude"
+  # s.public_header_files = "StyledPageControlDemo/PageControlDemo/**/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -96,7 +95,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  # s.resources = "Resources/*.png"
+  s.resources = "StyledPageControlDemo/PageControlDemo/Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
@@ -109,7 +108,7 @@ Pod::Spec.new do |s|
 
   # s.framework  = "SomeFramework"
   # s.frameworks = "SomeFramework", "AnotherFramework"
-s.frameworks   = 'CoreGraphics', 'UIKit', 'Foundation', 'QuartzCore'
+  # s.frameworks   = 'CoreGraphics', 'UIKit', 'Foundation', 'QuartzCore'
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
@@ -121,7 +120,7 @@ s.frameworks   = 'CoreGraphics', 'UIKit', 'Foundation', 'QuartzCore'
   #  where they will only apply to your library. If you depend on other Podspecs
   #  you can include multiple dependencies to ensure it works.
 
-  # s.requires_arc = true
+   s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
