@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  s.name         = "iOS-StyledPageControl"
+  s.name         = "StyledPageControl"
   s.version      = "1.4"
   s.summary      = "Customizable PageControl for iOS"
 
@@ -69,7 +69,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/zubco/iOS-StyledPageControl.git", :tag => "1.4" }
+  s.source       = { :git => "https://github.com/zubco/iOS-StyledPageControl.git", :tag => s.version.to_s }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
